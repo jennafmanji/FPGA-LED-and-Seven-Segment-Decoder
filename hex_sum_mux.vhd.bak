@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity hex_sum_mux is port (
+   
+   hex_AB	   	: in  std_logic_vector(7 downto 0);   -- The 4 bit data to be displayed
+	sum				: in std_logic_vector(7 downto 0);
+	pb3				: in std_logic;
+   hexSumOutput	: out std_logic_vector(7 downto 0)    -- 7-bit outputs to a 7-segment
+); 
+end hex_sum_mux;
+
+architecture hexSumMuxArchitecture of hex_sum_mux is 
+	
+	
+begin
+
+	with pb3 select
+		hexSumOutput <= sum   when '1',
+							 hex_AB when '0';
+			
+								  
+ 
+end architecture hexSumMuxArchitecture;

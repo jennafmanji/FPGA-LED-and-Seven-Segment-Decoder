@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Adder is port (
+   
+   sw	   :  in  std_logic_vector(3 downto 0);   -- The 4 bit data to be displayed
+   
+   sum :  out std_logic_vector(7 downto 0)    -- 7-bit outputs to a 7-segment
+); 
+end SevenSegment;
+
+architecture calculateSum of Adder is 
+	
+	
+begin
+		
+		with NOT(pb)(3 downto 0) select
+			Logic_func <= in_1 AND in_2 when "0001",
+							  in_1 OR in_2 when "0010",
+							  in_1 XOR in_2 when "0100";
+							  
+							  
+
+ 
+end LogicProcessing;
